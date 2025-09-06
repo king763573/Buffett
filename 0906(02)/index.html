@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跟著巴菲特學價值投資</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070&auto=format&fit=crop') center center/cover;
+        }
+        .quote-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .quote-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-gray-200">
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white text-center py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">跟著巴菲特學價值投資</h1>
+            <p class="text-lg md:text-xl text-amber-300 mb-8">耐力財富教練 Iverson 課程精華</p>
+            <a href="0906.pdf" download="巴菲特價值投資講義.pdf" class="mt-8 inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                下載課程講義 (PDF)
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Buffett's Quotes Section -->
+        <section id="quotes" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-amber-400">巴菲特的投資智慧</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Quotes will be dynamically inserted here -->
+                <script>
+                    const quotes = [
+                        "別人恐懼時貪婪，別人貪婪時恐懼。",
+                        "投資的第一條規則是不要賠錢，第二條規則是千萬不要忘記第一條規則。",
+                        "時間是優秀企業的朋友，是平庸企業的敵人。",
+                        "價格是你付出的，價值是你得到的。",
+                        "買股票就像買公司的一部分，要選擇你願意長期持有的公司。",
+                        "在你理解之前，不要投資。",
+                        "最好的投資，就是投資自己。",
+                        "複利是世界第八大奇蹟，懂它的人賺錢，不懂它的人付錢。",
+                        "如果你不願意持有一支股票十年，那就不要持有它十秒鐘。",
+                        "風險來自於你不知道自己在做什麼。"
+                    ];
+                    const quotesContainer = document.querySelector('#quotes .grid');
+                    quotes.forEach(quote => {
+                        const card = `
+                            <div class="quote-card bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-amber-500">
+                                <p class="text-lg italic">"${quote}"</p>
+                            </div>
+                        `;
+                        quotesContainer.innerHTML += card;
+                    });
+                </script>
+            </div>
+        </section>
+
+        <!-- S.A.V.E. System Section -->
+        <section id="save-system" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12 text-amber-400">S.A.V.E. 投資分析系統</h2>
+            <div class="space-y-12">
+
+                <!-- S: Select -->
+                <div class="bg-slate-800 p-8 rounded-lg shadow-xl">
+                    <h3 class="text-4xl font-bold text-amber-500 mb-4">S<span class="text-2xl text-white ml-2">elect (選擇)</span></h3>
+                    <p class="text-lg">從日常生活中挖掘潛力股。你經常消費、熟悉且喜愛的品牌，都可能是絕佳的投資起點。例如，你常去的 Costco (好市多)，就是一個典型的例子。</p>
+                </div>
+
+                <!-- A: Analyze -->
+                <div class="bg-slate-800 p-8 rounded-lg shadow-xl">
+                    <h3 class="text-4xl font-bold text-amber-500 mb-4">A<span class="text-2xl text-white ml-2">nalyze (分析)</span></h3>
+                    <p class="text-lg mb-6">深入分析公司的競爭格局。了解它的主要對手是誰，以及它在行業中的護城河有多深。下方以運動品牌 Nike 為例，比較其與主要競爭對手的關鍵財務數據。</p>
+                    <div class="overflow-x-auto mb-8">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-700">
+                                    <th class="p-3 font-bold uppercase text-gray-300 border border-slate-600">公司名稱</th>
+                                    <th class="p-3 font-bold uppercase text-gray-300 border border-slate-600">股票代碼</th>
+                                    <th class="p-3 font-bold uppercase text-gray-300 border border-slate-600">總部</th>
+                                    <th class="p-3 font-bold uppercase text-gray-300 border border-slate-600">最新營收(百萬USD)</th>
+                                    <th class="p-3 font-bold uppercase text-gray-300 border border-slate-600">毛利率</th>
+                                    <th class="p-3 font-bold uppercase text-gray-300 border border-slate-600">市值(Billion USD)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-slate-800 hover:bg-slate-700">
+                                    <td class="p-3 border border-slate-600">Nike Inc.</td><td class="p-3 border border-slate-600">#NKE</td><td class="p-3 border border-slate-600">美國</td><td class="p-3 border border-slate-600">37,403</td><td class="p-3 border border-slate-600">43.4%</td><td class="p-3 border border-slate-600">217.877B</td>
+                                </tr>
+                                <tr class="bg-slate-800 hover:bg-slate-700">
+                                    <td class="p-3 border border-slate-600">Adidas</td><td class="p-3 border border-slate-600">#ADDYY</td><td class="p-3 border border-slate-600">德國</td><td class="p-3 border border-slate-600">28,593</td><td class="p-3 border border-slate-600">52%</td><td class="p-3 border border-slate-600">66.79B</td>
+                                </tr>
+                                 <tr class="bg-slate-800 hover:bg-slate-700">
+                                    <td class="p-3 border border-slate-600">VF Corporation</td><td class="p-3 border border-slate-600">#VFC</td><td class="p-3 border border-slate-600">美國</td><td class="p-3 border border-slate-600">10,489</td><td class="p-3 border border-slate-600">55.3%</td><td class="p-3 border border-slate-600">34.371B</td>
+                                </tr>
+                                <tr class="bg-slate-800 hover:bg-slate-700">
+                                    <td class="p-3 border border-slate-600">Skechers</td><td class="p-3 border border-slate-600">#SKX</td><td class="p-3 border border-slate-600">美國</td><td class="p-3 border border-slate-600">5,220</td><td class="p-3 border border-slate-600">47.7%</td><td class="p-3 border border-slate-600">5.826B</td>
+                                </tr>
+                                <tr class="bg-slate-800 hover:bg-slate-700">
+                                    <td class="p-3 border border-slate-600">Lululemon</td><td class="p-3 border border-slate-600">#LULU</td><td class="p-3 border border-slate-600">加拿大</td><td class="p-3 border border-slate-600">3,979</td><td class="p-3 border border-slate-600">55.9%</td><td class="p-3 border border-slate-600">47.377B</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-lg">
+                       <canvas id="competitorChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- V: Valuation -->
+                <div class="bg-slate-800 p-8 rounded-lg shadow-xl">
+                    <h3 class="text-4xl font-bold text-amber-500 mb-4">V<span class="text-2xl text-white ml-2">aluation (估價)</span></h3>
+                    <p class="text-lg mb-6">學會評估一家公司的內在價值，是價值投資的核心。你可以在便宜的價格買入，並在合理的價格賣出。試試下方的簡易估價計算機，了解不同類型股票的估價邏輯。</p>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        
+                        <!-- Growth Stock Calculator -->
+                        <div class="bg-slate-900 p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-4 text-center text-amber-300">成長股 (PE < G)</h4>
+                            <div class="mb-4">
+                                <label for="eps" class="block mb-2 text-sm font-medium">當前 EPS (每股盈餘)</label>
+                                <input type="number" id="eps" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" placeholder="例如: 1.69">
+                            </div>
+                            <div class="mb-4">
+                                <label for="growthRate" class="block mb-2 text-sm font-medium">EPS 成長率 (%)</label>
+                                <input type="number" id="growthRate" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" placeholder="例如: 5.19">
+                            </div>
+                            <button onclick="calculateGrowth()" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-lg">計算合理價</button>
+                            <div id="growthResult" class="mt-4 text-center"></div>
+                        </div>
+
+                        <!-- Dividend Stock Calculator -->
+                        <div class="bg-slate-900 p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-4 text-center text-amber-300">穩定配息股 (> 4%)</h4>
+                            <div class="mb-4">
+                                <label for="dividend" class="block mb-2 text-sm font-medium">預期股息</label>
+                                <input type="number" id="dividend" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" placeholder="例如: 0.98">
+                            </div>
+                            <div class="mb-4">
+                                <label for="yieldRate" class="block mb-2 text-sm font-medium">目標殖利率 (%)</label>
+                                <input type="number" id="yieldRate" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" placeholder="例如: 4">
+                            </div>
+                            <button onclick="calculateDividend()" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-lg">計算合理價</button>
+                            <div id="dividendResult" class="mt-4 text-center"></div>
+                        </div>
+
+                        <!-- Asset Stock Calculator -->
+                        <div class="bg-slate-900 p-6 rounded-lg">
+                            <h4 class="text-xl font-bold mb-4 text-center text-amber-300">資產股 (PB < 1)</h4>
+                            <div class="mb-4">
+                                <label for="bookValue" class="block mb-2 text-sm font-medium">帳面價值 (每股淨值)</label>
+                                <input type="number" id="bookValue" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" placeholder="例如: 5.88">
+                            </div>
+                             <div class="mb-4">
+                                <label for="safetyMargin" class="block mb-2 text-sm font-medium">安全邊際 (0-1)</label>
+                                <input type="number" id="safetyMargin" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" placeholder="例如: 0.8">
+                            </div>
+                            <button onclick="calculateAsset()" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-lg">計算合理價</button>
+                            <div id="assetResult" class="mt-4 text-center"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- E: Execute -->
+                <div class="bg-slate-800 p-8 rounded-lg shadow-xl">
+                    <h3 class="text-4xl font-bold text-amber-500 mb-4">E<span class="text-2xl text-white ml-2">xecute (執行)</span></h3>
+                    <p class="text-lg">價值投資不是一場百米賽跑，而是一場馬拉松。在做出投資決策後，需要的是耐心與紀律。堅定地持有優質公司的股票，讓時間成為你財富增長的朋友。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer Section -->
+        <section id="disclaimer" class="mb-12">
+             <h2 class="text-3xl font-bold text-center mb-10 text-amber-400">你<span class="text-red-500">不會</span>在這堂課學到...</h2>
+             <div class="max-w-md mx-auto bg-slate-800 p-8 rounded-lg shadow-xl">
+                 <ul class="space-y-4">
+                     <li class="flex items-start"><span class="text-red-500 mr-3 text-2xl">✗</span><span>買低賣高的短線技巧</span></li>
+                     <li class="flex items-start"><span class="text-red-500 mr-3 text-2xl">✗</span><span>任何快速致富的捷徑</span></li>
+                     <li class="flex items-start"><span class="text-red-500 mr-3 text-2xl">✗</span><span>內線消息或明牌</span></li>
+                     <li class="flex items-start"><span class="text-red-500 mr-3 text-2xl">✗</span><span>當沖、期貨等高風險操作</span></li>
+                     <li class="flex items-start"><span class="text-red-500 mr-3 text-2xl">✗</span><span>直接推薦個股</span></li>
+                 </ul>
+             </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-700 py-6 text-center">
+        <p class="text-gray-400">靈感來源：Iverson 教練「跟著巴菲特學價值投資」課程</p>
+        <p class="text-sm text-gray-500 mt-2">免責聲明：本網頁所有內容僅供教育與學術交流目的，不構成任何投資建議。</p>
+    </footer>
+
+    <script>
+        // Chart.js for Competitor Analysis
+        const ctx = document.getElementById('competitorChart').getContext('2d');
+        const competitorChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Nike', 'Adidas', 'VF Corp', 'Skechers', 'Lululemon'],
+                datasets: [{
+                    label: '最新營收 (百萬 USD)',
+                    data: [37403, 28593, 10489, 5220, 3979],
+                    backgroundColor: 'rgba(245, 158, 11, 0.6)',
+                    borderColor: 'rgba(245, 158, 11, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                             color: '#cbd5e1'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                         grid: {
+                            color: 'rgba(203, 213, 225, 0.1)'
+                        },
+                        ticks: {
+                            color: '#cbd5e1'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#cbd5e1'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Valuation Calculators
+        function formatCurrency(num) {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num);
+        }
+
+        function calculateGrowth() {
+            const eps = parseFloat(document.getElementById('eps').value);
+            const growthRate = parseFloat(document.getElementById('growthRate').value);
+            const resultDiv = document.getElementById('growthResult');
+
+            if (isNaN(eps) || isNaN(growthRate)) {
+                resultDiv.innerHTML = `<p class="text-red-400">請輸入有效的數字</p>`;
+                return;
+            }
+            
+            // This is a simplified PEG model, assuming PEG ratio of 1
+            const reasonablePrice = eps * growthRate; 
+            const revaluedPrice = reasonablePrice * 1.2;
+
+            resultDiv.innerHTML = `
+                <p class="text-sm text-gray-400">合理價:</p>
+                <p class="text-2xl font-bold text-green-400">${formatCurrency(reasonablePrice)}</p>
+                <p class="text-sm text-gray-400 mt-2">重新估價 (x1.2):</p>
+                <p class="text-lg font-bold text-green-300">${formatCurrency(revaluedPrice)}</p>
+            `;
+        }
+        
+        function calculateDividend() {
+            const dividend = parseFloat(document.getElementById('dividend').value);
+            const yieldRate = parseFloat(document.getElementById('yieldRate').value);
+            const resultDiv = document.getElementById('dividendResult');
+
+            if (isNaN(dividend) || isNaN(yieldRate) || yieldRate <= 0) {
+                resultDiv.innerHTML = `<p class="text-red-400">請輸入有效的數字</p>`;
+                return;
+            }
+
+            const reasonablePrice = dividend / (yieldRate / 100);
+            const revaluedPrice = reasonablePrice * 1.5;
+
+            resultDiv.innerHTML = `
+                <p class="text-sm text-gray-400">合理價:</p>
+                <p class="text-2xl font-bold text-green-400">${formatCurrency(reasonablePrice)}</p>
+                 <p class="text-sm text-gray-400 mt-2">重新估價 (x1.5):</p>
+                <p class="text-lg font-bold text-green-300">${formatCurrency(revaluedPrice)}</p>
+            `;
+        }
+
+        function calculateAsset() {
+            const bookValue = parseFloat(document.getElementById('bookValue').value);
+            const safetyMargin = parseFloat(document.getElementById('safetyMargin').value);
+            const resultDiv = document.getElementById('assetResult');
+
+            if (isNaN(bookValue) || isNaN(safetyMargin)) {
+                resultDiv.innerHTML = `<p class="text-red-400">請輸入有效的數字</p>`;
+                return;
+            }
+            
+            const reasonablePrice = bookValue * safetyMargin;
+            const revaluedPrice = bookValue; // PB < 1, so the full book value is the upper limit
+
+             resultDiv.innerHTML = `
+                <p class="text-sm text-gray-400">合理價 (含安全邊際):</p>
+                <p class="text-2xl font-bold text-green-400">${formatCurrency(reasonablePrice)}</p>
+                <p class="text-sm text-gray-400 mt-2">帳面價值:</p>
+                <p class="text-lg font-bold text-green-300">${formatCurrency(revaluedPrice)}</p>
+            `;
+        }
+
+    </script>
+</body>
+</html>
+
