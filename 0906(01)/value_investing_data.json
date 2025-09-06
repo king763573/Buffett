@@ -1,0 +1,130 @@
+{
+  "buffett_quotes": [
+    {
+      "rule": "1. 別人恐懼時貪婪，別人貪婪時恐懼",
+      "english": "Be fearful when others are greedy, greeful when others are fearful",
+      "explanation": "在市場恐慌時買進，在過度樂觀時賣出"
+    },
+    {
+      "rule": "2. 投資的第一條規則是不要賠錢，第二條規則是千萬不要忘記第一條規則",
+      "english": "Rule No.1: Never lose money. Rule No.2: Never forget rule No.1",
+      "explanation": "風險管理是投資的首要考量"
+    },
+    {
+      "rule": "3. 時間是優秀企業的朋友，是平庸企業的敵人",
+      "english": "Time is the friend of the wonderful business, the enemy of the mediocre",
+      "explanation": "長期持有優質企業才能發揮複利效果"
+    },
+    {
+      "rule": "4. 價格是你付出的，價值是你得到的",
+      "english": "Price is what you pay; value is what you get",
+      "explanation": "專注於企業內在價值而非市場價格波動"
+    },
+    {
+      "rule": "5. 買股票就像買公司的一部分，要選擇你願意長期持有的公司",
+      "english": "Buy a stock the way you would buy a house",
+      "explanation": "以企業主的心態進行投資決策"
+    }
+  ],
+  "taiwan_market": {
+    "2024_performance": {
+      "taiex_return": 28.47,
+      "global_ranking": 2,
+      "daily_trading_volume": 381.4,
+      "market_cap": 74,
+      "pe_ratio": 20.0,
+      "pb_ratio": 2.49
+    },
+    "historical_comparison": {
+      "2023": {
+        "taiex_close": 17930.81,
+        "return": 26.83
+      },
+      "2024": {
+        "taiex_close": 23035,
+        "return": 28.47
+      }
+    }
+  },
+  "nike_example": {
+    "fiscal_2024": {
+      "revenue": 51362,
+      "gross_profit": 22887,
+      "net_income": 5700,
+      "eps": 3.76,
+      "gross_margin": 44.6
+    },
+    "segments": {
+      "North_America": 16.04,
+      "EMEA": 12.28,
+      "Greater_China": 5.07,
+      "APLA": 5.59
+    }
+  },
+  "value_metrics": {
+    "financial_ratios": [
+      {
+        "metric": "P/E Ratio",
+        "preferred_range": "< Industry Average",
+        "description": "Price to Earnings"
+      },
+      {
+        "metric": "P/B Ratio",
+        "preferred_range": "< 1.5",
+        "description": "Price to Book Value"
+      },
+      {
+        "metric": "Debt/Equity",
+        "preferred_range": "< 0.5",
+        "description": "Financial Leverage"
+      },
+      {
+        "metric": "ROE",
+        "preferred_range": "> 15%",
+        "description": "Return on Equity"
+      },
+      {
+        "metric": "Current Ratio",
+        "preferred_range": "> 1.5",
+        "description": "Liquidity Measure"
+      }
+    ],
+    "buffett_3m_framework": {
+      "Management": {
+        "description": "企業治理 - 選對好舵手",
+        "key_points": [
+          "誠信經營團隊",
+          "歷史績效記錄",
+          "股東利益導向"
+        ]
+      },
+      "Moat": {
+        "description": "護城河 - 競爭優勢",
+        "key_points": [
+          "品牌價值",
+          "技術專利",
+          "成本優勢",
+          "網路效應"
+        ]
+      },
+      "Margin_of_Safety": {
+        "description": "安全邊際 - 合理價格買入",
+        "key_points": [
+          "內在價值評估",
+          "25-40%折價購買",
+          "風險控管"
+        ]
+      }
+    }
+  },
+  "course_info": {
+    "instructor": "耐力財富教練 - Iverson",
+    "title": "從生活學投資 跟著巴菲特學價值投資",
+    "experience": [
+      "巴菲特線上學院客座講師",
+      "工作三年存到第一桶金",
+      "五年買到屬於自己的千萬豪宅",
+      "美股股息收入高達6位數"
+    ]
+  }
+}

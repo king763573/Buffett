@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>從生活學投資 跟著巴菲特學價值投資</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>價值投資學院</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">課程介紹</a></li>
+                <li><a href="#quotes" class="nav-link">巴菲特金律</a></li>
+                <li><a href="#framework" class="nav-link">3M框架</a></li>
+                <li><a href="#market" class="nav-link">市場分析</a></li>
+                <li><a href="#tools" class="nav-link">投資工具</a></li>
+                <li><a href="#case-study" class="nav-link">案例研究</a></li>
+                <li><a href="#quiz" class="nav-link">學習測驗</a></li>
+                <li><a href="0906.pdf" download="0906.pdf" class="nav-link nav-download">📥 講義下載</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">從生活學投資<br>跟著巴菲特學價值投資</h1>
+                    <p class="hero-subtitle">由耐力財富教練 Iverson 親授，學習股神巴菲特的投資哲學</p>
+                    <div class="instructor-info">
+                        <h3>講師：耐力財富教練 - Iverson</h3>
+                        <ul class="achievements">
+                            <li>✓ 巴菲特線上學院客座講師</li>
+                            <li>✓ 工作三年存到第一桶金</li>
+                            <li>✓ 五年買到屬於自己的千萬豪宅</li>
+                            <li>✓ 美股股息收入高達6位數</li>
+                        </ul>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn btn--primary btn--lg">開始學習</button>
+                        <a href="0906.pdf" download="0906.pdf" class="btn btn--secondary btn--lg download-btn">
+                            📥 下載講義PDF
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-visual">
+                        <div class="investment-icon">📈</div>
+                        <h2>價值投資</h2>
+                        <p>長期持有優質企業</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section id="overview" class="overview">
+        <div class="container">
+            <h2 class="section-title">課程目標</h2>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <div class="objective-icon">🎯</div>
+                    <h3>掌握價值投資核心</h3>
+                    <p>學習巴菲特的投資哲學與思維方式</p>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">📊</div>
+                    <h3>財務分析技能</h3>
+                    <p>學會分析企業財務報表與評估內在價值</p>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">🛡️</div>
+                    <h3>風險管控能力</h3>
+                    <p>建立完整的風險管理與資產配置策略</p>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">🏆</div>
+                    <h3>長期投資成功</h3>
+                    <p>培養耐心與紀律，實現財富長期增長</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buffett's Golden Rules -->
+    <section id="quotes" class="quotes-section">
+        <div class="container">
+            <h2 class="section-title">巴菲特投資金律</h2>
+            <div class="quote-of-day">
+                <h3>每日金句</h3>
+                <div id="daily-quote" class="daily-quote-card">
+                    <p class="quote-text"></p>
+                    <p class="quote-english"></p>
+                    <p class="quote-explanation"></p>
+                </div>
+            </div>
+            <div class="quotes-grid" id="quotes-grid">
+                <!-- Quotes will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 3M Framework -->
+    <section id="framework" class="framework-section">
+        <div class="container">
+            <h2 class="section-title">巴菲特 3M 投資框架</h2>
+            <div class="framework-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="management">Management<br>企業治理</button>
+                    <button class="tab-btn" data-tab="moat">Moat<br>護城河</button>
+                    <button class="tab-btn" data-tab="margin">Margin of Safety<br>安全邊際</button>
+                </div>
+                <div class="tab-contents">
+                    <div id="management" class="tab-content active">
+                        <div class="framework-card">
+                            <div class="framework-icon">👑</div>
+                            <h3>企業治理 - 選對好舵手</h3>
+                            <ul class="framework-points">
+                                <li>誠信經營團隊</li>
+                                <li>歷史績效記錄</li>
+                                <li>股東利益導向</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="moat" class="tab-content">
+                        <div class="framework-card">
+                            <div class="framework-icon">🏰</div>
+                            <h3>護城河 - 競爭優勢</h3>
+                            <ul class="framework-points">
+                                <li>品牌價值</li>
+                                <li>技術專利</li>
+                                <li>成本優勢</li>
+                                <li>網路效應</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="margin" class="tab-content">
+                        <div class="framework-card">
+                            <div class="framework-icon">🛡️</div>
+                            <h3>安全邊際 - 合理價格買入</h3>
+                            <ul class="framework-points">
+                                <li>內在價值評估</li>
+                                <li>25-40%折價購買</li>
+                                <li>風險控管</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Analysis -->
+    <section id="market" class="market-section">
+        <div class="container">
+            <h2 class="section-title">台股市場分析</h2>
+            <div class="market-dashboard">
+                <div class="market-stats">
+                    <div class="stat-card">
+                        <h3>2024年報酬率</h3>
+                        <div class="stat-value success">+28.47%</div>
+                        <p>全球排名第2</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>日均成交量</h3>
+                        <div class="stat-value">NT$ 381.4億</div>
+                        <p>市場活躍度高</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>市值</h3>
+                        <div class="stat-value">NT$ 74兆</div>
+                        <p>亞洲主要市場</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>本益比</h3>
+                        <div class="stat-value">20.0倍</div>
+                        <p>合理估值區間</p>
+                    </div>
+                </div>
+                <div class="chart-container" style="position: relative; height: 400px;">
+                    <h3>2024年全球股市表現比較</h3>
+                    <canvas id="marketChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Tools -->
+    <section id="tools" class="tools-section">
+        <div class="container">
+            <h2 class="section-title">價值投資工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>財務比率分析</h3>
+                    <div class="ratio-chart" style="position: relative; height: 300px;">
+                        <canvas id="ratioChart"></canvas>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <h3>股票評估計算機</h3>
+                    <form class="calculator-form">
+                        <div class="form-group">
+                            <label class="form-label">當前股價 (NT$)</label>
+                            <input type="number" id="stock-price" class="form-control" placeholder="請輸入股價">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">每股盈餘 (EPS)</label>
+                            <input type="number" id="eps" class="form-control" placeholder="請輸入EPS">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">期望報酬率 (%)</label>
+                            <input type="number" id="expected-return" class="form-control" placeholder="請輸入期望報酬率">
+                        </div>
+                        <button type="button" class="btn btn--primary" onclick="calculateValue()">計算內在價值</button>
+                        <div id="calculation-result" class="calculation-result"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="ratios-table">
+                <h3>關鍵財務指標參考值</h3>
+                <table class="metrics-table">
+                    <thead>
+                        <tr>
+                            <th>財務指標</th>
+                            <th>理想範圍</th>
+                            <th>說明</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ratios-tbody">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study: Nike -->
+    <section id="case-study" class="case-study-section">
+        <div class="container">
+            <h2 class="section-title">案例研究：Nike 股票分析</h2>
+            <div class="case-study-content">
+                <div class="nike-overview">
+                    <h3>Nike 2024財年表現</h3>
+                    <div class="nike-stats">
+                        <div class="nike-stat">
+                            <h4>營收</h4>
+                            <div class="stat-value">$513.62億</div>
+                        </div>
+                        <div class="nike-stat">
+                            <h4>毛利</h4>
+                            <div class="stat-value">$228.87億</div>
+                        </div>
+                        <div class="nike-stat">
+                            <h4>淨利</h4>
+                            <div class="stat-value">$57億</div>
+                        </div>
+                        <div class="nike-stat">
+                            <h4>每股盈餘</h4>
+                            <div class="stat-value">$3.76</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nike-analysis">
+                    <h3>地區營收分佈</h3>
+                    <div class="nike-chart-container" style="position: relative; height: 400px;">
+                        <canvas id="nikeChart"></canvas>
+                    </div>
+                </div>
+                <div class="valuation-analysis">
+                    <h3>估值分析步驟</h3>
+                    <div class="analysis-steps">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h4>財務健康檢查</h4>
+                            <p>毛利率 44.6%，顯示強大的定價能力</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h4>競爭護城河</h4>
+                            <p>全球領導品牌，強大的品牌價值護城河</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h4>成長前景</h4>
+                            <p>多元化地區佈局，持續創新產品線</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <h2 class="section-title">學習測驗</h2>
+            <div class="quiz-container">
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="progress-text">問題 <span id="current-question">1</span> / <span id="total-questions">5</span></span>
+                </div>
+                <div class="quiz-question" id="quiz-question">
+                    <h3 id="question-text"></h3>
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                    <div class="quiz-actions">
+                        <button id="next-btn" class="btn btn--primary" onclick="nextQuestion()" disabled>下一題</button>
+                        <button id="restart-btn" class="btn btn--secondary hidden" onclick="restartQuiz()">重新開始</button>
+                    </div>
+                </div>
+                <div class="quiz-result hidden" id="quiz-result">
+                    <h3>測驗結果</h3>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <span id="final-score">0</span>%
+                        </div>
+                    </div>
+                    <p id="result-message"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>價值投資學院</h3>
+                    <p>跟著巴菲特學習長期價值投資</p>
+                    <div class="footer-download">
+                        <a href="0906.pdf" download="0906.pdf" class="btn btn--outline">
+                            📥 下載完整講義
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>課程內容</h4>
+                    <ul>
+                        <li>巴菲特投資哲學</li>
+                        <li>財務分析技能</li>
+                        <li>風險管理策略</li>
+                        <li>實戰案例分析</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>聯絡資訊</h4>
+                    <p>講師：耐力財富教練 - Iverson</p>
+                    <p>巴菲特線上學院客座講師</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 價值投資學院. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
